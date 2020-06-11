@@ -1,5 +1,7 @@
 ﻿import React, { Component } from 'react';
-
+import { CreateSalesModal } from './modules/Sales/CreateSalesModal';
+import { EditSalesModal } from './modules/Sales/EditSalesModal';
+import { DeleteSalesModal } from './modules/Sales/DeleteSalesModal';
 
 export class Sales extends Component {
     displayName = Sales.name
@@ -22,7 +24,8 @@ export class Sales extends Component {
 
         return (
             <div>
-                <button className="ui blue button">New Sales</button>
+                <CreateSalesModal trigger={<button primary> New Sales</button>}
+                    onClose={this.onClose} />
                 <table className='table'>
                     <thead>
                         <tr>
@@ -39,15 +42,18 @@ export class Sales extends Component {
                         {sales.map(sales =>
                            
                             <tr key={sales.customer}>
-                                console.log("@@#")
-                                <td>{sales.customer}</td> 
-                                console.log("@@#")
+                                <td>{sales.customer}</td>  
                                 <td>{sales.product}</td>
                                 <td>{sales.store}</td>
                                 <td>{sales.dateSold}</td>
-                                <td><button className="ui yellow button">Edit</button></td>
-                                console.log("@@#")
-                                <td><button className="ui red button">Cancel</button></td>
+                                <td>
+                                    <EditSalesModal trigger={<button className="ui yellow button">Edit</button>}
+                                        onClose={this.onClose} />
+                                </td>
+                                <td>
+                                    <DeleteSalesModal trigger={<button className="ui red button">Delete</button>}
+                                        onClose={this.onClose} />
+                                </td>
 
                             </tr>
                         )}

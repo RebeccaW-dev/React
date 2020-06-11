@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using CustomerController;
+using System.Collections.Generic;
+
 namespace OnBoardingTask.Models
 {
     public partial class AdventureWorks2017Context : DbContext
@@ -18,6 +20,11 @@ namespace OnBoardingTask.Models
             : base(options)
         {
             System.Diagnostics.Debug.WriteLine("CS AdventureWorks2017Context(options)");
+        }
+
+        internal IEnumerable<Customers> ToList()
+        {
+            throw new NotImplementedException();
         }
 
         public static object ConnectionStrings { get; internal set; }
@@ -74,6 +81,11 @@ namespace OnBoardingTask.Models
 
                 entity.Property(e => e.Name).HasMaxLength(100);
             });
+        }
+
+        internal Customers Find(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

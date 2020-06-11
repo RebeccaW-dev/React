@@ -33,10 +33,10 @@ namespace CustomerController.Controllers
                         System.Diagnostics.Debug.WriteLine("##item=" + pos);
                         System.Diagnostics.Debug.WriteLine("##field count " + rdr.FieldCount);
 
-/*                        for (int i = 0; i < rdr.FieldCount; i++) // print header
-                        {
-                            System.Diagnostics.Debug.WriteLine("##rdr=" + rdr[0] );
-                        }*/
+                        /*                        for (int i = 0; i < rdr.FieldCount; i++) // print header
+                                                {
+                                                    System.Diagnostics.Debug.WriteLine("##rdr=" + rdr[0] );
+                                                }*/
 
                         for (int i = 0; i < rdr.FieldCount; i++) // print items
                         {
@@ -73,14 +73,6 @@ namespace CustomerController.Controllers
             public int Id { get; set; }
             public string Name { get; set; }
             public string Address { get; set; }
-
-      
-            }
         }
-
-
-    
-    
+    }
 }
-
-

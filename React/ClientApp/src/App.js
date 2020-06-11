@@ -11,19 +11,19 @@ import { Sales } from './components/Sales';
 import { Store } from './components/Store';
 
 export default class App extends Component {
-  static displayName = App.name;
+    static displayName = App.name;
 
-  render () {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-        <Route path='/customer' component={Customer} />
-        <Route path='/product' component={Product} />
-        <Route path='/sales' component={Sales} />
-        <Route path='/store' component={Store} />
-      </Layout>
-    );
-  }
+    render() {
+        return (
+            <Layout>
+                <Route exact path='/' component={Home} />
+                <Route path='/counter' component={Counter} />
+                <Route path='/fetch-data' component={FetchData} />
+                <Route path='/customer' component={Customer} />
+                <Route path='/product' component={Product} />
+                <Route path='/sales' component={Sales} />
+                <Route path='/store' component={Store} />
+            </Layout>
+        );
+    }
 }

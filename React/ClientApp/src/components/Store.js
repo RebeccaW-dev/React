@@ -1,5 +1,7 @@
 ﻿import React, { Component } from 'react';
-
+import { CreateStoreModal } from './modules/Store/CreateStoreModal';
+import { EditStoreModal } from './modules/Store/EditStoreModal';
+import { DeleteStoreModal } from './modules/Store/DeleteStoreModal';
 
 export class Store extends Component {
     displayName = Store.name
@@ -22,7 +24,8 @@ export class Store extends Component {
 
         return (
             <div>
-                <button className="ui blue button">New Store</button>
+                <CreateStoreModal trigger={<button primary> New Store</button>}
+                    onClose={this.onClose} />
                 <table className='table'>
                     <thead>
                         <tr>
@@ -30,7 +33,6 @@ export class Store extends Component {
                             <th>Address</th>
                             <th>Action</th>
                             <th>Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -38,8 +40,14 @@ export class Store extends Component {
                             <tr key={stores.name}>
                                 <td>{stores.name}</td>
                                 <td>{stores.address}</td>
-                                <td><button className="ui yellow button">Edit</button></td>
-                                <td> <button className="ui red button">Cancel</button></td>
+                                <td>
+                                    <EditStoreModal trigger={<button className="ui yellow button">Edit</button>}
+                                        onClose={this.onClose} />
+                                </td>
+                                <td>
+                                    <DeleteStoreModal trigger={<button className="ui red button">Delete</button>}
+                                        onClose={this.onClose} />
+                                </td>
 
                             </tr>
                         )}

@@ -29,16 +29,8 @@ export class NavMenu extends Component {
                     <NavbarBrand tag={Link} className="text-white" to="/">React</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                                <NavLink tag={Link} className="text-white" to="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                                <NavLink tag={Link} className="text-white" to="/counter">Counter</NavLink>
-                </NavItem>
-                <NavItem>
-                                <NavLink tag={Link} className="text-white" to="/fetch-data">Fetch data</NavLink>
-                </NavItem>
+              <ul className="navbar-nav">
+              
                 <NavItem>
                                 <NavLink tag={Link} className="text-white" to="/customer">Customer</NavLink>
                 </NavItem>

@@ -10,7 +10,102 @@ namespace OnBoardingTask.Models
 {
     public class DataAccessLayer
     {
-        //declare connection string
+        AdventureWorks2017Context db = new AdventureWorks2017Context();
+        public IEnumerable<Customers> GetAllCustomers()
+        {
+            try
+            {
+                return db.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //To Add new employee record     
+        public int AddCustomer(Customers customer)
+        {
+            try
+            {
+                db.Add(customer);
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //To Update the records of a particluar employee    
+        public int UpdateCustomer(Customers customer)
+        {
+            try
+            {
+                db.Entry(customer).State = EntityState.Modified;
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //Get the details of a particular employee    
+        public Customers GetCustomerData(int id)
+        {
+            try
+            {
+                Customers customer = db.Find(id);
+                return customer;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //To Delete the record of a particular employee    
+        public int DeleteEmployee(int id)
+        {
+            try
+            {
+                Customers emp = db.Find(id);
+                db.Remove(emp);
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        internal int AddCustomer(CustomerController.Controllers.CustomerController.Customeri customeri)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int UpdateCustomer(CustomerController.Controllers.CustomerController.Customeri customeri)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int DeleteCustomeri(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal CustomerController.Controllers.CustomerController.Customeri GetAllCustomers(int id)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+    
+
+
+
+
+        /*//declare connection string
         private string cs = AdventureWorks2017Context.ConnectionString;
 
         //Return list of all Employees
@@ -85,5 +180,5 @@ namespace OnBoardingTask.Models
             return i;
         }
     }
-}
+}*/
       

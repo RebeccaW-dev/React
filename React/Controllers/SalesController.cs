@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using OnBoardingTask.Models;
 
 namespace SalesController.Controllers
@@ -47,19 +48,20 @@ namespace SalesController.Controllers
                         pos++;
 
                         System.Diagnostics.Debug.WriteLine("##rdr=");
-                        lst.Add(new Salesi
-                        {
-                            id = (int)rdr[0],
-                            customer = (string)rdr[1],
-                            product = (string)rdr[2],
-                            store = (string)rdr[3],
-                            dateSold = (string)DateTime.Now.ToString("MMMM dd"),
-                        }) ;
-                    }
+                        
+                            lst.Add(new Salesi
+                            {
+                              
+                                customer = (string)rdr[0],
+                                product = (string)rdr[1],
+                                store = (string)rdr[2],
+                            });
+                        
                     System.Diagnostics.Debug.WriteLine(lst);
-                }
-                return lst;
-                
+                    }
+                    return lst;
+                  
+                }            
             }
         }
         [HttpGet("[action]")]

@@ -1,5 +1,7 @@
 ﻿import React, { Component } from 'react';
-
+import { CreateProductModal } from './modules/Product/CreateProductModal';
+import { EditProductModal } from './modules/Product/EditProductModal';
+import { DeleteProductModal } from './modules/Product/DeleteProductModal';
 
 export class Product extends Component {
     displayName = Product.name
@@ -16,13 +18,13 @@ export class Product extends Component {
                 console.log(data);
             });
 
-
     }
     static renderProductTable(products) {
 
         return (
             <div>
-                <button className="ui blue button">New Product</button>
+                <CreateProductModal trigger={<button primary> New Product</button>}
+                    onClose={this.onClose} />
                 <table className='table'>
                     <thead>
                         <tr>
@@ -38,9 +40,14 @@ export class Product extends Component {
                             <tr key={products.name}>
                                 <td>{products.name}</td>
                                 <td>{products.price}</td>
-                                <td><button className="ui yellow button">Edit</button></td>
-                                <td> <button className="ui red button">Cancel</button></td>
-
+                                <td>
+                                    <EditProductModal trigger={<button className="ui yellow button">Edit</button>}
+                                        onClose={this.onClose} />
+                                </td>
+                                <td>
+                                    <DeleteProductModal trigger={<button className="ui red button">Delete</button>}
+                                        onClose={this.onClose} />
+                                </td>
                             </tr>
                         )}
                     </tbody>
