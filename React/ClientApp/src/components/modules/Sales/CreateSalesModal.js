@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Button, Modal, Header, Form } from 'semantic-ui-react';
+import { Button, Modal, Icon, Form } from 'semantic-ui-react';
 
 
 export class CreateSalesModal extends Component {
@@ -44,12 +44,13 @@ export class CreateSalesModal extends Component {
                            
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button color='black' onClick={this.state.handleClose}>cancal
-                         
-                    </Button>
-                        <Button color='green' onClick={this.state.handleCreate}>create
-                    </Button>                
-                    </Modal.Actions>           
+                        <Button color='green'>
+                            <Icon name='checkmark' onClick={this.state.handleCreate} /> create
+                </Button>
+                        <Button color='black' onClick={this.state.handleClose}>
+                            <Icon name='cancel' /> cancel
+                </Button>
+                    </Modal.Actions>
                     </Modal>
             </div>
             )

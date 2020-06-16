@@ -8,7 +8,7 @@ export class Customer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { Customer: [], loading: true };
+        this.state = { Customer: [], loading: true, modalopen:false };
         const baseUrl = "api/Customer"
 
         fetch(baseUrl)
@@ -19,12 +19,20 @@ export class Customer extends Component {
             });
 
     }
+
+    handleClose = () => {
+        this.setState({
+            modalopen: false,
+        })
+        console.log('Click happened');
+    }
+
     static renderCustomerTable(customers) {
 
         return (
             <div>
                 <CreateCustomerModal trigger={<button primary> New Customer</button>}
-                    onClose={this.onClose} />
+                    onClick={this.handleClose} />
                 <table className='table'>
                     <thead>
                         <tr>

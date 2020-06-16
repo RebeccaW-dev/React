@@ -7,15 +7,15 @@ export class CreateCustomerModal extends Component {
     constructor(props) {
         super(props);
         this.handleClose = this.handleClose.bind(this)
-        this.handleClick = this.handleClick.bind(this)
-        this.handleCreate = this.handleCreate.bind(this)
+        // this.handleClick = this.handleClick.bind(this)
+        // this.handleCreate = this.handleCreate.bind(this)
         this.state = {
-            loading: true, data: '', name: "", address: "", modalOpen: true, onClose: false
+           data: '', name: "", address: "", modalOpen: true, onClose: false
         }
     }
 
-    handleClick = () => this.setState({ modalOpen: true })
-    handleCreate = () => {
+    //  handleClick = () => this.setState({ modalOpen: true })
+    /*handleCreate = () => {
         if (this.state.name !== '' || this.state.name !== null) {
             fetch('https://localhost:44332/Customer')
                 .then(response => response.json())
@@ -25,19 +25,22 @@ export class CreateCustomerModal extends Component {
                     })
                 )
         }
+    }*/
 
-    }
     handleClose = () => {
         this.setState({
-            loading: true, modalOpen: false, onClose: true
+            modalOpen: false,          
         })
+        console.log('Click happened');
     }
+
+    
 
     render() {
         //const {modalOpen, size}=this.state
         return (
-            <div className="ui container" >
-                <Modal trigger={<Button primary>New Customer</Button>} closeIcon >
+            <div className="ui container" >             
+                <Modal trigger={<Button primary>New Customer</Button>} onClick={this.handleClose} closeIcon >
 
                     <Modal.Header content='Create Customer' />
                     <Modal.Content>
@@ -55,14 +58,16 @@ export class CreateCustomerModal extends Component {
                     </Modal.Content>
                     <Modal.Actions>
                         <Button color='green'>
-                            <Icon name='create' onClick={this.state.handleCreate} /> create
+                            <Icon name='checkmark' onClick={this.state.handleCreate} /> create
                 </Button>
-                        <Button color='black' onClick={this.state.handleClose}>
-                            <Icon name='cancel' /> cancel
+                        <Button color='black' onClick={this.handleClose}>
+                            <Icon name='cancel' onClick={this.handleClose}/> cancel
                 </Button>
                     </Modal.Actions>
                 </Modal>
             </div>
+            
         )
     }
+
 }

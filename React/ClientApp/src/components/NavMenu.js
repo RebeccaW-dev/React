@@ -1,7 +1,72 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Menu, Grid} from 'semantic-ui-react'
+
+export class NavMenu extends Component {
+    state = {}
+
+    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+    render() {
+        const { activeItem } = this.state
+
+        return (
+          
+                <Grid.Column color='black' style={{ margin: '0.5em', height: 50 }}> 
+                   
+
+                    <Menu >
+                    <Menu.Item
+                        as='a' href='#' exact to="/" name="React" activeclassname="React"  onClick={this.handleItemClick} >
+                   
+                    </Menu.Item>
+
+                    <Menu.Item as='a' href='Customer' name="Customer" activeclassname="Customer" onClick={this.handleItemClick} 
+          
+                >
+                    Customer
+        </Menu.Item>
+                    <Menu.Item as='a' href='Product' name="Product" activeclassname="Product" onClick={this.handleItemClick}            
+                >
+                    Product
+                </Menu.Item>
+
+                    <Menu.Item as='a' href='Sales' name="Sales" activeclassname="Sales" onClick={this.handleItemClick}        
+            >
+                Sales
+             </Menu.Item>
+                    <Menu.Item as='a' href='Store' name="Store" activeclassname="Store" onClick={this.handleItemClick}             
+                >
+                    Store
+             </Menu.Item>
+                </Menu>
+            </Grid.Column>       
+        )
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+
+
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -29,7 +94,8 @@ export class NavMenu extends Component {
                     <NavbarBrand tag={Link} className="text-white" to="/">React</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-              <ul className="navbar-nav">
+                        <ul className="navbar-nav">
+
               
                 <NavItem>
                                 <NavLink tag={Link} className="text-white" to="/customer">Customer</NavLink>
@@ -51,4 +117,4 @@ export class NavMenu extends Component {
       </header>
     );
   }
-}
+}*/

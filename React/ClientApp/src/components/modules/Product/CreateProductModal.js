@@ -53,7 +53,7 @@ export class CreateProductModal extends Component {
                     </Modal.Content>
                         <Modal.Actions>
                             <Button color='green'>
-                                <Icon name='create' onClick={this.state.handleCreate} /> create
+                            <Icon name='checkmark' onClick={this.state.handleCreate} /> create
                 </Button>
                         <Button color='black' onClick={this.state.handleClose}>
                                 <Icon name='cancel'/> cancel
