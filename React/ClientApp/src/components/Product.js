@@ -41,11 +41,11 @@ export class Product extends Component {
                                 <td>{products.name}</td>
                                 <td>{products.price}</td>
                                 <td>
-                                    <EditProductModal trigger={<button className="ui yellow button">Edit</button>}
+                                    <EditProductModal trigger={<button className="ui yellow button"><i class="edit icon"></i>Edit</button>}
                                         onClose={this.onClose} />
                                 </td>
                                 <td>
-                                    <DeleteProductModal trigger={<button className="ui red button">Delete</button>}
+                                    <DeleteProductModal trigger={<button className="ui red button"><i class="trash icon"></i>Delete</button>}
                                         onClose={this.onClose} />
                                 </td>
                             </tr>

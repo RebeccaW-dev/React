@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Button, Modal, Form } from 'semantic-ui-react';
+import { Button, Modal,Icon, Form } from 'semantic-ui-react';
 
 
 export class EditProductModal extends Component {
@@ -27,7 +27,7 @@ export class EditProductModal extends Component {
     render() {
         return (
             <div className="ui mini-container" >
-                <Modal trigger={<Button className="ui yellow button">Edit</Button>} closeIcon >
+                <Modal trigger={<Button className="ui yellow button" ><i class="edit icon"></i>Edit</Button>} closeIcon >
 
                     <Modal.Header content='Edit Product' />
                     <Modal.Content>

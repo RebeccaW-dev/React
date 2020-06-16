@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Button, Modal} from 'semantic-ui-react';
+import { Button, Modal,Icon} from 'semantic-ui-react';
 
 
 export class DeleteCustomerModal extends Component {
@@ -27,7 +27,7 @@ export class DeleteCustomerModal extends Component {
     render() {
         return (
             <div className="ui mini-container" >
-                <Modal trigger={<Button className="ui red button">Delete</Button>} closeIcon >
+                <Modal trigger={<Button className="ui red button"><i class="trash icon"></i>Delete</Button>} closeIcon >
 
                     <Modal.Header content='Delete Customer' />
                     <Modal.Content>

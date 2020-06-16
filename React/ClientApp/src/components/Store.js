@@ -41,11 +41,11 @@ export class Store extends Component {
                                 <td>{stores.name}</td>
                                 <td>{stores.address}</td>
                                 <td>
-                                    <EditStoreModal trigger={<button className="ui yellow button">Edit</button>}
+                                    <EditStoreModal trigger={<button className="ui yellow button"><i class="edit icon"></i>Edit</button>}
                                         onClose={this.onClose} />
                                 </td>
                                 <td>
-                                    <DeleteStoreModal trigger={<button className="ui red button">Delete</button>}
+                                    <DeleteStoreModal trigger={<button className="ui red button"><i class="trash icon"></i>Delete</button>}
                                         onClose={this.onClose} />
                                 </td>
 

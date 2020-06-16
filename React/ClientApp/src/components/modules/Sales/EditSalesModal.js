@@ -27,7 +27,7 @@ export class EditSalesModal extends Component {
     render() {
         return (
             <div className="ui mini-container" >
-                <Modal trigger={<Button className="ui yellow button">Edit</Button>} closeIcon >
+                <Modal trigger={<Button className="ui yellow button" ><i class="edit icon"></i>Edit</Button>} closeIcon >
 
                     <Modal.Header content='Edit Customer' />
                     <Modal.Content>

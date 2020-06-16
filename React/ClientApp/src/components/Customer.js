@@ -49,11 +49,13 @@ export class Customer extends Component {
                                 <td>{customers.name}</td>
                                 <td>{customers.address}</td>
                                 <td>
-                                    <EditCustomerModal trigger={<button className="ui yellow button">Edit</button>}
+                                    <EditCustomerModal
+                                        trigger={<button className="ui yellow button"
+                                        ><i class="edit icon"></i>Edit</button>}
                                         onClose={this.onClose} />
                                 </td>
                                 <td>
-                                    <DeleteCustomerModal trigger={<button className="ui red button">Delete</button>}
+                                    <DeleteCustomerModal trigger={<button className="ui red button"><i class="trash icon"></i>Delete</button>}
                                         onClose={this.onClose} />
                                 </td>
                             </tr>

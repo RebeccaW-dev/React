@@ -24,7 +24,7 @@ export class Sales extends Component {
 
         return (
             <div>
-                <CreateSalesModal trigger={<button primary> New Sales</button>}
+                <CreateSalesModal trigger={<button primary > New Sales</button>}
                     onClose={this.onClose} />
                 <table className='table'>
                     <thead>
@@ -47,11 +47,11 @@ export class Sales extends Component {
                                 <td>{sales.store}</td>
                                 <td>{sales.dateSold}</td>
                                 <td>
-                                    <EditSalesModal trigger={<button className="ui yellow button">Edit</button>}
+                                    <EditSalesModal trigger={<button className="ui yellow button" ><i class="edit icon"></i>Edit</button>}
                                         onClose={this.onClose} />
                                 </td>
                                 <td>
-                                    <DeleteSalesModal trigger={<button className="ui red button">Delete</button>}
+                                    <DeleteSalesModal trigger={<button className="ui red button"><i class="trash icon"></i>Delete</button>}
                                         onClose={this.onClose} />
                                 </td>
 

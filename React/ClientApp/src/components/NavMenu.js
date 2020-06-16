@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Grid} from 'semantic-ui-react'
+import { Menu, Grid, Segment } from 'semantic-ui-react'
 
 export class NavMenu extends Component {
     state = {}
@@ -8,13 +8,11 @@ export class NavMenu extends Component {
 
     render() {
         const { activeItem } = this.state
-
         return (
-          
-                <Grid.Column color='black' style={{ margin: '0.5em', height: 50 }}> 
-                   
 
-                    <Menu >
+            <Segment inverted >  
+
+                <Menu inverted pointing secondary>
                     <Menu.Item
                         as='a' href='#' exact to="/" name="React" activeclassname="React"  onClick={this.handleItemClick} >
                    
@@ -38,8 +36,8 @@ export class NavMenu extends Component {
                 >
                     Store
              </Menu.Item>
-                </Menu>
-            </Grid.Column>       
+                </Menu >
+            </Segment>     
         )
     }
 }
