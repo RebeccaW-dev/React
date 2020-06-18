@@ -2,13 +2,14 @@
 import { CreateCustomerModal } from './modules/Customer/CreateCustomerModal';
 import { EditCustomerModal } from './modules/Customer/EditCustomerModal';
 import { DeleteCustomerModal } from './modules/Customer/DeleteCustomerModal';
+import { Table } from 'semantic-ui-react';
 
 export class Customer extends Component {
     displayName = Customer.name
 
     constructor(props) {
         super(props);
-        this.state = { Customer: [], loading: true, modalopen:false };
+        this.state = { Customer: [], loading: true, modalopen: false };
         const baseUrl = "api/Customer"
 
         fetch(baseUrl)
@@ -33,16 +34,16 @@ export class Customer extends Component {
             <div>
                 <CreateCustomerModal trigger={<button primary> New Customer</button>}
                     onClick={this.handleClose} />
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Action</th>
-                            <th>Action</th>
+                <Table className='Table'>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>Address</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
 
-                        </tr>
-                    </thead>
+                        </Table.Row>
+                    </Table.Header>
                     <tbody>
                         {customers.map(customers =>
                             <tr key={customers.name}>
@@ -61,7 +62,7 @@ export class Customer extends Component {
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             </div>
         );
     }

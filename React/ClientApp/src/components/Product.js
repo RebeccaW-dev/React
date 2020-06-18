@@ -2,6 +2,7 @@
 import { CreateProductModal } from './modules/Product/CreateProductModal';
 import { EditProductModal } from './modules/Product/EditProductModal';
 import { DeleteProductModal } from './modules/Product/DeleteProductModal';
+import { Table } from 'semantic-ui-react';
 
 export class Product extends Component {
     displayName = Product.name
@@ -25,16 +26,16 @@ export class Product extends Component {
             <div>
                 <CreateProductModal trigger={<button primary> New Product</button>}
                     onClose={this.onClose} />
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                            <th>Action</th>
+                <Table className='Table'>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>Price</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
 
-                        </tr>
-                    </thead>
+                        </Table.Row>
+                    </Table.Header>
                     <tbody>
                         {products.map(products =>
                             <tr key={products.name}>
@@ -51,7 +52,7 @@ export class Product extends Component {
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             </div>
         );
     }

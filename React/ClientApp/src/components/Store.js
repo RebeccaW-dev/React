@@ -2,6 +2,7 @@
 import { CreateStoreModal } from './modules/Store/CreateStoreModal';
 import { EditStoreModal } from './modules/Store/EditStoreModal';
 import { DeleteStoreModal } from './modules/Store/DeleteStoreModal';
+import { Table } from 'semantic-ui-react';
 
 export class Store extends Component {
     displayName = Store.name
@@ -26,15 +27,16 @@ export class Store extends Component {
             <div>
                 <CreateStoreModal trigger={<button primary> New Store</button>}
                     onClose={this.onClose} />
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Action</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
+                <Table className='Table'>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>Address</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
+
+                        </Table.Row>
+                    </Table.Header>
                     <tbody>
                         {stores.map(stores =>
                             <tr key={stores.name}>
@@ -52,7 +54,7 @@ export class Store extends Component {
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             </div>
         );
     }

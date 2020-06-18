@@ -4,7 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
-import './custom.css'
+//import './custom.css'
 import { Customer } from './components/Customer';
 import { Product } from './components/Product';
 import { Sales } from './components/Sales';

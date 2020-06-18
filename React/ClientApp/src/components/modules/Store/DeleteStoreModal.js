@@ -26,8 +26,8 @@ export class DeleteStoreModal extends Component {
     }
     render() {
         return (
-            <div className="ui mini-container" >
-                <Modal trigger={<Button className="ui red button"><i class="trash icon"></i>Delete</Button>} closeIcon >
+            <div className="container" >
+                <Modal trigger={<Button className="ui red button"><i className="trash icon"></i>Delete</Button>} closeIcon >
 
                     <Modal.Header content='Delete Store' />
                     <Modal.Content>

@@ -13,10 +13,9 @@ export class NavMenu extends Component {
             <Segment inverted >  
 
                 <Menu inverted pointing secondary>
-                    <Menu.Item
-                        as='a' href='#' exact to="/" name="React" activeclassname="React"  onClick={this.handleItemClick} >
+                    <Menu.Item as='a' href='#' exact to="/" name="React" activeclassname="React"  onClick={this.handleItemClick} />
                    
-                    </Menu.Item>
+                   
 
                     <Menu.Item as='a' href='Customer' name="Customer" activeclassname="Customer" onClick={this.handleItemClick} 
           

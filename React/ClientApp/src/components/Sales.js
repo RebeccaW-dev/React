@@ -2,6 +2,7 @@
 import { CreateSalesModal } from './modules/Sales/CreateSalesModal';
 import { EditSalesModal } from './modules/Sales/EditSalesModal';
 import { DeleteSalesModal } from './modules/Sales/DeleteSalesModal';
+import { Table } from 'semantic-ui-react';
 
 export class Sales extends Component {
     displayName = Sales.name
@@ -26,17 +27,16 @@ export class Sales extends Component {
             <div>
                 <CreateSalesModal trigger={<button primary > New Sales</button>}
                     onClose={this.onClose} />
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Customer</th>
-                            <th>Product</th>
-                            <th>Store</th>
-                            <th>DateSold</th>
-                            <th>Actions</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
+                <Table className='Table'>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>Address</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
+                            <Table.HeaderCell>Action</Table.HeaderCell>
+
+                        </Table.Row>
+                    </Table.Header>
                    
                     <tbody>
                         {sales.map(sales =>
@@ -58,7 +58,7 @@ export class Sales extends Component {
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             </div>
         );
     }

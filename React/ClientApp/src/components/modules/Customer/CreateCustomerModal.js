@@ -7,25 +7,10 @@ export class CreateCustomerModal extends Component {
     constructor(props) {
         super(props);
         this.handleClose = this.handleClose.bind(this)
-        // this.handleClick = this.handleClick.bind(this)
-        // this.handleCreate = this.handleCreate.bind(this)
         this.state = {
            data: '', name: "", address: "", modalOpen: true, onClose: false
         }
     }
-
-    //  handleClick = () => this.setState({ modalOpen: true })
-    /*handleCreate = () => {
-        if (this.state.name !== '' || this.state.name !== null) {
-            fetch('https://localhost:44332/Customer')
-                .then(response => response.json())
-                .then(
-                    this.setState({
-                        name: this.state.name, address: this.state.address
-                    })
-                )
-        }
-    }*/
 
     handleClose = () => {
         this.setState({
@@ -37,13 +22,12 @@ export class CreateCustomerModal extends Component {
     
 
     render() {
-        //const {modalOpen, size}=this.state
         return (
-            <div className="ui container" >             
-                <Modal trigger={<Button primary>New Customer</Button>} onClick={this.handleClose} closeIcon >
+            <div className="container" >             
+              <Modal trigger={<Button primary>New Customer</Button>} onClick={this.handleClose} closeIcon >
 
-                    <Modal.Header content='Create Customer' />
-                    <Modal.Content>
+                <Modal.Header content='Create Customer' />
+                  <Modal.Content>
                         <Form.Field>
                             <label>NAME</label>
                         </Form.Field>
