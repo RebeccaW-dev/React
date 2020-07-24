@@ -80,8 +80,7 @@ export class Customer extends Component {
                 </div>
                 <div className="ui grid">
                     <div className=" twelve wide column"></div>
-                        
-
+                       
                 </div>
                 <i className="copyright outline icon"></i>2020-rebecca W
             </div>

@@ -3,25 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using CustomerController;
 using System.Collections.Generic;
+using OnBoardingTask.Models;
 
-namespace OnBoardingTask.Models
+namespace React.Models
 {
     public partial class AdventureWorks2017Context : DbContext
 
     {
-        public AdventureWorks2017Context()
-        {
-           // System.Diagnostics.Debug.WriteLine
-
-                             
-        }
-
+       
         public AdventureWorks2017Context(DbContextOptions<AdventureWorks2017Context> options)
             : base(options)
-        {
+        {    
             System.Diagnostics.Debug.WriteLine("CS AdventureWorks2017Context(options)");
         }
-
+       
         internal IEnumerable<Customers> ToList()
         {
             throw new NotImplementedException();
@@ -29,7 +24,7 @@ namespace OnBoardingTask.Models
 
         public static object ConnectionStrings { get; internal set; }
         public static string ConnectionString { get; internal set; }
-        public virtual DbSet<Customers> Customer { get; set; }
+        public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
         public virtual DbSet<Stores> Stores { get; set; }

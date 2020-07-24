@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OnBoardingTask.Models;
 
-namespace CustomerController.Controllers
+namespace ProductController.Controllers
 {
     [Route("api/[controller]")]
     public class ProductController : Controller

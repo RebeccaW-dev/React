@@ -2,7 +2,7 @@
 import { CreateProductModal } from './modules/Product/CreateProductModal';
 import { EditProductModal } from './modules/Product/EditProductModal';
 import { DeleteProductModal } from './modules/Product/DeleteProductModal';
-import { Table } from 'semantic-ui-react';
+import { Menu, Table, Dropdown } from 'semantic-ui-react';
 
 export class Product extends Component {
     displayName = Product.name
@@ -53,6 +53,26 @@ export class Product extends Component {
                         )}
                     </tbody>
                 </Table>
+                <div className="ui grid">
+                    <Menu compact>
+                        <Dropdown text='10' simple item />
+                    </Menu>
+
+                    <div className="four wide column"></div>
+                    <div className="four wide column"></div>
+                    <div className="four wide column"></div>
+                    <div className="twelve wide column"></div>
+                    <a className='ui blue bottom label'>1</a>
+                </div>
+                <div class="ui divider" />
+                <div className="ui grid">
+                    <div className=" twelve wide column"></div>
+                </div>
+                <div className="ui grid">
+                    <div className=" twelve wide column"></div>
+
+                </div>
+                <i className="copyright outline icon"></i>2020-rebecca W
             </div>
         );
     }

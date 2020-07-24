@@ -2,7 +2,7 @@
 import { CreateSalesModal } from './modules/Sales/CreateSalesModal';
 import { EditSalesModal } from './modules/Sales/EditSalesModal';
 import { DeleteSalesModal } from './modules/Sales/DeleteSalesModal';
-import { Table } from 'semantic-ui-react';
+import { Menu, Table, Dropdown } from 'semantic-ui-react';
 
 export class Sales extends Component {
     displayName = Sales.name
@@ -30,10 +30,14 @@ export class Sales extends Component {
                 <Table className='Table'>
                     <Table.Header>
                         <Table.Row>
-                            <Table.HeaderCell>Name</Table.HeaderCell>
-                            <Table.HeaderCell>Address</Table.HeaderCell>
-                            <Table.HeaderCell>Action</Table.HeaderCell>
-                            <Table.HeaderCell>Action</Table.HeaderCell>
+                            <Table.HeaderCell>customer</Table.HeaderCell>
+                            <Table.HeaderCell>product</Table.HeaderCell>
+                            <Table.HeaderCell>store</Table.HeaderCell>
+                            <Table.HeaderCell>dateSold</Table.HeaderCell>
+                            <Table.HeaderCell>action</Table.HeaderCell>
+                            <Table.HeaderCell>action</Table.HeaderCell>
+
+
 
                         </Table.Row>
                     </Table.Header>
@@ -59,6 +63,26 @@ export class Sales extends Component {
                         )}
                     </tbody>
                 </Table>
+                <div className="ui grid">
+                    <Menu compact>
+                        <Dropdown text='10' simple item />
+                    </Menu>
+
+                    <div className="four wide column"></div>
+                    <div className="four wide column"></div>
+                    <div className="four wide column"></div>
+                    <div className="twelve wide column"></div>
+                    <a className='ui blue bottom label'>1</a>
+                </div>
+                <div class="ui divider" />
+                <div className="ui grid">
+                    <div className=" twelve wide column"></div>
+                </div>
+                <div className="ui grid">
+                    <div className=" twelve wide column"></div>
+
+                </div>
+                <i className="copyright outline icon"></i>2020-rebecca W
             </div>
         );
     }

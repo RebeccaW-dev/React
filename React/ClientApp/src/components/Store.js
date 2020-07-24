@@ -2,7 +2,7 @@
 import { CreateStoreModal } from './modules/Store/CreateStoreModal';
 import { EditStoreModal } from './modules/Store/EditStoreModal';
 import { DeleteStoreModal } from './modules/Store/DeleteStoreModal';
-import { Table } from 'semantic-ui-react';
+import { Menu, Table, Dropdown } from 'semantic-ui-react';
 
 export class Store extends Component {
     displayName = Store.name
@@ -55,6 +55,26 @@ export class Store extends Component {
                         )}
                     </tbody>
                 </Table>
+                <div className="ui grid">
+                    <Menu compact>
+                        <Dropdown text='10' simple item />
+                    </Menu>
+
+                    <div className="four wide column"></div>
+                    <div className="four wide column"></div>
+                    <div className="four wide column"></div>
+                    <div className="twelve wide column"></div>
+                    <a className='ui blue bottom label'>1</a>
+                </div>
+                <div class="ui divider" />
+                <div className="ui grid">
+                    <div className=" twelve wide column"></div>
+                </div>
+                <div className="ui grid">
+                    <div className=" twelve wide column"></div>
+
+                </div>
+                <i className="copyright outline icon"></i>2020-rebecca W
             </div>
         );
     }
